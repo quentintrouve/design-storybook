@@ -1,12 +1,15 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import BaseComponent from "./Components/@BaseComponent";
-import "./App.css";
+import Page from "./Pages";
+import "./Styles/global.scss";
 
 function App() {
   return (
     <div className="App">
-      <BaseComponent />
+      <BrowserRouter>
+        <Page />
+      </BrowserRouter>
     </div>
   );
 }
