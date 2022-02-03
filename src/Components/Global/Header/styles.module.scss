@@ -1,0 +1,9 @@
+@import "/src/Styles/theme";
+
+.Header {
+  width: 100%;
+  background-color: map-get($colors, "mainBackground");
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
