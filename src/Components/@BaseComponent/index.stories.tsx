@@ -12,8 +12,7 @@ const Template: ComponentStory<typeof BaseComponent> = (
 ) => <BaseComponent {...args} />;
 
 const Primary = Template.bind({});
-const Secondary = Template.bind({});
 
 Primary.args = {};
 
-export { Primary, Secondary };
+export { Primary };
