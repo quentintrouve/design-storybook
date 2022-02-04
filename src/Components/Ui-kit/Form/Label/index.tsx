@@ -11,7 +11,7 @@ export interface LabelProps {
 
 export default function Label({ className, text, htmlFor }: LabelProps) {
   return (
-    <label {...{ htmlFor }} className={cx(css.label, className)}>
+    <label {...{ htmlFor }} className={cx(css.Label, className)}>
       {text}
     </label>
   );
