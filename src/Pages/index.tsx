@@ -7,7 +7,6 @@ import SignIn from "./SignIn";
 
 import css from "./styles.module.scss";
 
-//interface PageProps {}
 
 export default function Page() {
   return (
