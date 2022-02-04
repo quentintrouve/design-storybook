@@ -13,13 +13,13 @@ interface PageProps {}
 
 export default function Page({}: PageProps) {
   return (
-    <>
+    <div className={css.Page}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="sign-in" element={<SignIn />} />
       </Routes>
-    </>
+    </div>
   );
 }

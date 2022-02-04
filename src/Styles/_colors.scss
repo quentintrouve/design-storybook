@@ -1,4 +1,30 @@
-$colors: (
-  "green": #219653,
-  "mainBackground": teal,
+$primary-colors: (
+  "blue": #112f45,
+  "orange": #ec8b32,
+  "paper": #f7f3ea,
+  "white": #ffffff,
+);
+
+$semantic-colors: (
+  "approuval-green": #9beaa1,
+  "dark-green": #559071,
+  "light-green": #edffed,
+  "cta-blue": #58a1a3,
+  "cta-dark-blue": #437c7d,
+  "cta-light-blue": #cdf3f4,
+  "ui-orange": #f0a23a,
+  "ui-dark-orange": #f0a23a,
+  "ui-light-orange": #e9e1bc,
+  "error-red": #c53a32,
+  "error-dark-red": #c53a32,
+  "error-light-red": #fef3f4,
+);
+
+$neutral-colors: (
+  "black-100": #1f1f1f,
+  "black-60": #545454,
+  "black-40": #808080,
+  "black-20": #aeaeae,
+  "black-10": #d6d6d6,
+  "black-5": #e8e8e8,
 );
