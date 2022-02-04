@@ -6,6 +6,26 @@
   text-transform: capitalize;
 }
 
+@mixin from($screenName) {
+  @media screen and (min-width: map-get($screens, $screenName)) {
+    @content;
+  }
+}
+
+@function getGridColumnWidth($numberOfColumns) {
+  @return math.div(100vw, map-get($grid, "columns")) * $numberOfColumns;
+}
+
+@function getGridColumnMaxWidth($numberOfColumns) {
+  @return math.div(map-get($grid, "max-width"), map-get($grid, "columns")) *
+    $numberOfColumns;
+}
+
+@mixin gridColumnWidth($numberOfColumns: 1) {
+  width: getGridColumnWidth($numberOfColumns);
+  max-width: getGridColumnMaxWidth($numberOfColumns);
+}
+
 @mixin inputWrapper {
   max-width: 450px;
   display: flex;

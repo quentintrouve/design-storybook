@@ -2,9 +2,9 @@
 
 .Spinner {
   animation: rotate 2s normal linear infinite;
-  &.black {
+  &.blue {
     & path {
-      fill: map-get($primary-colors, "black");
+      fill: map-get($primary-colors, "blue");
     }
   }
 

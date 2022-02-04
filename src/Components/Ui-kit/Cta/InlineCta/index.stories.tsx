@@ -14,11 +14,9 @@ const Template: ComponentStory<typeof InlineCta> = (args: InlineCtaProps) => (
 );
 
 const Primary = Template.bind({});
-const Secondary = Template.bind({});
 
 Primary.args = {
-  variant: "primary",
-  text: "submit",
+  text: "button",
   disabled: false,
   loading: false,
   error: false,
