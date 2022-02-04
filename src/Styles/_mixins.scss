@@ -3,7 +3,6 @@
   background: none;
   font-family: map-get($fontsFamilies, "helvetica-bold");
   cursor: pointer;
-  text-transform: capitalize;
 }
 
 @mixin from($screenName) {

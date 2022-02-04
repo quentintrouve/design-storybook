@@ -30,8 +30,8 @@ export default function SignIn({ className }: SignInProps) {
             name: "input",
             inputProps: {
               type: "text",
-              placeholder: "Nom Prénom",
-              label: "Dupont Marc",
+              placeholder: "Dupont Marc",
+              label: "Nom Prénom",
               name: "entity",
               id: "signin-entity",
             },

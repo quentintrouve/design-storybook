@@ -17,13 +17,13 @@ export default function Header({ className }: headerProps) {
         <InlineCta className={css.navItem} text="Home" to="/" routerLink />
         <InlineCta
           className={css.navItem}
-          text="Signup"
+          text="Se connecter"
           to="/sign-up"
           routerLink
         />
         <InlineCta
           className={css.navItem}
-          text="Signin"
+          text="S'inscrire"
           to="/sign-in"
           routerLink
         />

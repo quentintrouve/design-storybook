@@ -9,7 +9,9 @@
 }
 
 .navItem {
-  &:not(last-child) {
+  &:not(:last-child) {
+    padding-right: 16px;
+    border-right: 2px solid map-get($neutral-colors, "black-10");
     margin-right: 16px;
   }
 }
