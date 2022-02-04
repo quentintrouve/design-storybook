@@ -6,10 +6,13 @@ const cx = classNames.bind(css);
 export interface LabelProps {
   className?: string;
   text: string;
+  htmlFor?: string;
 }
 
-export default function Label({ className, text }: LabelProps) {
+export default function Label({ className, text, htmlFor }: LabelProps) {
   return (
-    <label className={cx(css.label, className)}>{text}</label>
+    <label {...{ htmlFor }} className={cx(css.label, className)}>
+      {text}
+    </label>
   );
 }
