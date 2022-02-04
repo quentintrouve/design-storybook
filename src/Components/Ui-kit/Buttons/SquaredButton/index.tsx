@@ -3,14 +3,26 @@ import classNames from "classnames/bind";
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
 
-export interface BaseComponentProps {
+export interface SquaredButtonProps {
   className?: string;
+  type: "primary" | "secondary";
+  text: string;
+  onClick?: () => any;
 }
 
-export default function BaseComponent({ className }: BaseComponentProps) {
+export default function SquaredButton({
+  className,
+  type,
+  text,
+  onClick,
+}: SquaredButtonProps) {
   return (
-    <div className={cx(css.baseComponentWrapper, className)}>
-      I, i'm a base component
-    </div>
+    <button className={cx(css.SquaredButton, className, type)} {...{ onClick }}>
+      {text}
+    </button>
   );
 }
+
+SquaredButton.defaultProps = {
+  type: "primary",
+};

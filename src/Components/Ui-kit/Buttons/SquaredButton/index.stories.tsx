@@ -1,18 +1,23 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import BaseComponent, { BaseComponentProps } from "./index";
+import SquaredButton, { SquaredButtonProps } from "./index";
 
 export default {
-  title: "Base Component",
-  component: BaseComponent,
-} as ComponentMeta<typeof BaseComponent>;
+  title: "Buttons/Squared Button",
+  component: SquaredButton,
+  parameters: {
+    layout: "centered",
+  },
+} as ComponentMeta<typeof SquaredButton>;
 
-const Template: ComponentStory<typeof BaseComponent> = (
-  args: BaseComponentProps
-) => <BaseComponent {...args} />;
+const Template: ComponentStory<typeof SquaredButton> = (
+  args: SquaredButtonProps
+) => <SquaredButton {...args} />;
 
 const Primary = Template.bind({});
 
-Primary.args = {};
+Primary.args = {
+  type: "primary",
+  text: "submit",
+};
 
 export { Primary };
