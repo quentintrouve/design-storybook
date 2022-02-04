@@ -5,7 +5,7 @@ const cx = classNames.bind(css);
 
 export interface LabelProps {
   className?: string;
-  text?: string;
+  text: string;
 }
 
 export default function Label({ className, text }: LabelProps) {
