@@ -10,6 +10,6 @@ export interface LabelProps {
 
 export default function Label({ className, text }: LabelProps) {
   return (
-    <label className={cx(css.label, className)}>{text}</label>
+    <label className={cx(css.Label, className)}>{text}</label>
   );
 }

@@ -7,16 +7,16 @@
 }
 
 @mixin inputWrapper {
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 @mixin input {
-  width: 100%;
-  height: 56px;
-  padding: 0 16px;
-  border: 1px solid map-get($neutral-colors, "black-5");
+  max-width: 100%;
+  padding: 24px 16px;
+  border: 1px solid map-get($neutral-colors, "black-40");
   border-radius: $border-radius;
   background-color: map-get($primary-colors, "white");
   font-family: map-get($fontsFamilies, "helvetica");

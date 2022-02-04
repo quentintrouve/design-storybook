@@ -14,12 +14,20 @@ export interface InputTextProps {
 	placeholder: string;
 	disabled?: boolean;
 	required?: boolean;
-  	error?: boolean;
+  error?: boolean;
 }
 
-export default function InputText({ className, label, name, placeholder, disabled, required, error }: InputTextProps) {
+export default function InputText({ 
+	className, 
+	label, 
+	name, 
+	placeholder, 
+	disabled, 
+	required, 
+	error }: InputTextProps) {
+
   return (
-    <div className={cx(css.inputText, className)}>
+    <div className={cx(css.InputText, className)}>
       <Label text={label} />
       <Input 
 				type="text" 

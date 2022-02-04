@@ -1,22 +1,23 @@
 @import "/src/Styles/theme";
 
-.input {
+.Input {
     @include input;
 
     &:hover,
     &:focus {
         border-color: map-get($primary-colors, "blue");
+        outline: none;
     }
 
     &::placeholder {
-        color: map-get($neutral-colors, "black-5");
+        color: map-get($neutral-colors, "black-40");
     }
 
-    &.input-warning {
-        border-color: map-get($primary-colors, "orange");
+    &.disabled {
+        background-color: map-get($neutral-colors, "black-5");
     }
 
-    &.input-error {
+    &.error {
         border-color: map-get($primary-colors, "red");
     }
 }
