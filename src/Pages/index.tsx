@@ -7,7 +7,7 @@ import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
 import css from "./styles.module.scss";
-const cx = classNames.bind(css);
+//const cx = classNames.bind(css);
 
 interface PageProps {}
 
