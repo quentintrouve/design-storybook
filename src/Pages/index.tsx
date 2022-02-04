@@ -7,9 +7,7 @@ import SignIn from "./SignIn";
 
 import css from "./styles.module.scss";
 
-interface PageProps {}
-
-export default function Page({}: PageProps) {
+export default function Page() {
   return (
     <div className={css.Page}>
       <Header />
