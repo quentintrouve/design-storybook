@@ -5,7 +5,6 @@ import css from "./styles.module.scss";
 const cx = classNames.bind(css);
 
 export interface BaseComponentProps {
-  content?: string;
   className?: string;
 }
 

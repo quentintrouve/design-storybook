@@ -2,7 +2,7 @@
 
 .Header {
   width: 100%;
-  background-color: map-get($colors, "mainBackground");
+  background-color: map-get($primary-colors, "orange");
   padding: 20px;
   display: flex;
   justify-content: space-between;
