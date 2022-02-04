@@ -1,0 +1,45 @@
+@import "/src/Styles/theme";
+
+.CheckBoxWrapper {
+  display: flex;
+  align-items: center;
+
+  .checkBox {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    color: transparent;
+    border: 1px solid map-get($neutral-colors, "black-40");
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      background-color: map-get($primary-colors, "blue");
+      transition: transform 0.2s ease-in-out;
+      border-radius: 4px;
+      transform: scale(0);
+    }
+
+    &:checked {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .label {
+    margin-top: 3px;
+    cursor: pointer;
+  }
+}
