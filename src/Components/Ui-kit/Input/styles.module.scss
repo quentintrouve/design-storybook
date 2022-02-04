@@ -1,24 +1,23 @@
 @import "/src/Styles/theme";
 
 .input {
-    width: 100%;
-    height: 56px;
-    padding: 0 16px;
-    border: 1px solid map-get($neutral-colors, "black-5");
-    border-radius: $border-radius;
-    background-color: map-get($primary-colors, "white");
-}
+    @include input;
 
-.input:hover,
-.input:focus {
-    border-color: map-get($primary-colors, "blue");
-}
+    &:hover,
+    &:focus {
+        border-color: map-get($primary-colors, "blue");
+    }
 
-.input--warning {
-    border-color: map-get($primary-colors, "orange")
-}
+    &::placeholder {
+        color: map-get($neutral-colors, "black-5");
+    }
 
-.input--error {
-    border-color: map-get($primary-colors, "red")
+    &.input-warning {
+        border-color: map-get($primary-colors, "orange");
+    }
+
+    &.input-error {
+        border-color: map-get($primary-colors, "red");
+    }
 }
 

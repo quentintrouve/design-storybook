@@ -5,3 +5,20 @@
   cursor: pointer;
   text-transform: capitalize;
 }
+
+@mixin inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@mixin input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid map-get($neutral-colors, "black-5");
+  border-radius: $border-radius;
+  background-color: map-get($primary-colors, "white");
+  font-family: map-get($fontsFamilies, "helvetica");
+  font-size: map-get($fontSizes, "regular");
+}
