@@ -1,0 +1,22 @@
+@import "/src/Styles/theme";
+
+.Spinner {
+  animation: rotate 2s normal linear infinite;
+  &.black {
+    & path {
+      fill: map-get($primary-colors, "black");
+    }
+  }
+
+  &.white {
+    & path {
+      fill: map-get($primary-colors, "white");
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

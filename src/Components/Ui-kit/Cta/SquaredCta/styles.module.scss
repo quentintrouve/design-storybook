@@ -1,0 +1,60 @@
+@import "/src/Styles/theme";
+
+.SquaredCta {
+  @include button;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: background-color 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.primary {
+    background-color: map-get($cta-colors, "primary-cta");
+    color: map-get($primary-colors, "white");
+
+    &:hover {
+      background-color: map-get($cta-colors, "primary-cta-hover");
+    }
+
+    &:focus,
+    &active {
+      outline: none;
+      background-color: map-get($cta-colors, "primary-cta-active");
+    }
+
+    &.error {
+      background-color: map-get($primary-colors, "red");
+    }
+  }
+
+  &.secondary {
+    background-color: map-get($cta-colors, "secondary-cta");
+    color: map-get($primary-colors, "blue");
+    border: 1px solid map-get($primary-colors, "blue");
+
+    &:hover {
+      background-color: map-get($cta-colors, "secondary-cta-hover");
+    }
+
+    &:focus,
+    &active {
+      outline: none;
+      background-color: map-get($cta-colors, "secondary-cta-active");
+    }
+
+    &.error {
+      color: map-get($primary-colors, "red");
+      border-color: map-get($primary-colors, "red");
+    }
+  }
+
+  .spinner {
+    margin-right: 8px;
+  }
+}
