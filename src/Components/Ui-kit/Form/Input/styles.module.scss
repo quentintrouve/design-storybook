@@ -3,13 +3,6 @@
 .InputWrapper {
     @include inputWrapper;
 
-
-    label {
-        font-family: map-get($fontsFamilies, "helvetica");
-        font-size: map-get($fontSizes, "regular");
-        color: map-get($neutral-colors, "black-40");
-    }
-
     input {
         @include input;
     

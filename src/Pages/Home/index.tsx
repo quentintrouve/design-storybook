@@ -5,12 +5,13 @@ const cx = classNames.bind(css);
 
 interface HomeProps {
   className?: string;
+  user?: string;
 }
 
-export default function Home({ className }: HomeProps) {
+export default function Home({ className, user}: HomeProps) {
   return (
     <div className={cx(css.Home, className)}>
-      Home
+      Bonjour {user}
     </div>
   )
 }

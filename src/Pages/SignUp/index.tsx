@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
 import Form from "src/Components/Global/Form";
@@ -8,14 +9,30 @@ const cx = classNames.bind(css);
 
 interface SignUpProps {
   className?: string;
+  user?: string;
+  setUser?: (param:string) => any;
 }
 
-export default function SignIn({ className }: SignUpProps) {
+export default function SignIn({ className, user, setUser }: SignUpProps) {
 
-  const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    console.log('Connecté !')
+  const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
+  const [userName, setUserName] = useState<string>(user);
+
+  const handleChange = (e:any) :any => {
+    if(e.target.value) {
+      setUserName(e.target.value)
+      setButtonIsDisabled(false)
+    } else {
+      setUserName('')
+      setButtonIsDisabled(true)
+    }
+  }
+
+  const handleClick = () :any => {
+    setUser(userName)
+    navigate('/')
   }
 
   return (
@@ -34,6 +51,7 @@ export default function SignIn({ className }: SignUpProps) {
               label: "Email",
               name: "mail",
               id: "signup-mail",
+              onChange: (e:any) => handleChange(e)
             },
           },
           {

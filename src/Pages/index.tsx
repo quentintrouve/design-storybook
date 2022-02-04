@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useState} from "react";
 
 import Header from "src/Components/Global/Header";
 import Home from "./Home";
@@ -9,13 +10,17 @@ import ForgotPassword from "./ForgotPassword"
 import css from "./styles.module.scss";
 
 export default function Page() {
+  
+  const [userLogged, setUserLogged] = useState<string>('');
+
+
   return (
     <div className={css.Page}>
-      <Header />
+      <Header user={userLogged} setUser={setUserLogged}/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="sign-up" element={<SignUp />} />
-        <Route path="sign-in" element={<SignIn />} />
+        <Route path="/" element={<Home user={userLogged} />} />
+        <Route path="sign-up" element={<SignUp user={userLogged} setUser={setUserLogged} />} />
+        <Route path="sign-in" element={<SignIn user={userLogged} setUser={setUserLogged} />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
       </Routes>
     </div>

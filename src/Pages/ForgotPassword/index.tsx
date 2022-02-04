@@ -15,7 +15,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
 
 	const navigate = useNavigate();
 
-  const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
+  const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
 
   return (
     <div className={cx(css.Signin, className)}>

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
 import Form from "src/Components/Global/Form";
@@ -8,14 +9,32 @@ const cx = classNames.bind(css);
 
 interface SignInProps {
   className?: string;
+  user?: string;
+  setUser?: (param:string) => any;
 }
 
-export default function SignIn({ className }: SignInProps) {
+export default function SignIn({ className, user, setUser }: SignInProps) {
 
-  const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    console.log('Inscrit !')
+  const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
+  const [userName, setUserName] = useState<string>(user);
+
+  const handleChangeEntity = (e:any) :any => {
+    if(e.target.value) {
+      setButtonIsDisabled(false)
+    } else {
+      setButtonIsDisabled(true)
+    }
+  }
+
+  const handleChangeEmail = (e:any) :any => {
+    setUserName(e.target.value)
+  }
+
+  const handleClick = () :any => {
+    setUser(userName)
+    navigate('/')
   }
 
   return (
@@ -34,6 +53,7 @@ export default function SignIn({ className }: SignInProps) {
               label: "Nom Prénom",
               name: "entity",
               id: "signin-entity",
+              onChange: (e:any) => handleChangeEntity(e)
             },
           },
           {
@@ -44,6 +64,7 @@ export default function SignIn({ className }: SignInProps) {
               label: "Email",
               name: "mail",
               id: "signin-mail",
+              onChange: (e:any) => handleChangeEmail(e)
             },
           },
           {
@@ -69,8 +90,8 @@ export default function SignIn({ className }: SignInProps) {
             ctaProps: {
               variant: "primary",
               text: "Inscription",
-              onClick: () => handleClick(),
               disabled: buttonIsDisabled,
+              onClick: () => handleClick(),
             }
           }
         ]}
