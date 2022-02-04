@@ -1,4 +1,3 @@
-import classNames from "classnames/bind";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./../Components/Global/Header";
@@ -7,7 +6,6 @@ import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
 import css from "./styles.module.scss";
-//const cx = classNames.bind(css);
 
 interface PageProps {}
 
