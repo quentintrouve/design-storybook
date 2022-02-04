@@ -1,26 +1,37 @@
 @import "/src/Styles/theme";
 
-.Input {
-    @include input;
+.InputWrapper {
+    @include inputWrapper;
 
-    &:hover,
-    &:focus {
-        border-color: map-get($primary-colors, "blue");
-        outline: none;
-    }
 
-    &::placeholder {
+    label {
+        font-family: map-get($fontsFamilies, "helvetica");
+        font-size: map-get($fontSizes, "regular");
         color: map-get($neutral-colors, "black-40");
     }
 
-    &.disabled {
-        background-color: map-get($neutral-colors, "black-5");
-        border-color: map-get($primary-colors, "black-5");
-
-    }
-
-    &.error {
-        border-color: map-get($primary-colors, "red");
+    input {
+        @include input;
+    
+        &:hover,
+        &:focus {
+            border-color: map-get($primary-colors, "blue");
+            outline: none;
+        }
+    
+        &::placeholder {
+            color: map-get($neutral-colors, "black-40");
+        }
+    
+        &.disabled {
+            background-color: map-get($neutral-colors, "black-5");
+            border-color: map-get($primary-colors, "black-5");
+    
+        }
+    
+        &.error {
+            border-color: map-get($primary-colors, "red");
+        }
     }
 }
 
