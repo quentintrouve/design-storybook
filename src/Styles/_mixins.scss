@@ -13,11 +13,11 @@
 }
 
 @function getGridColumnWidth($numberOfColumns) {
-  @return math.div(100vw, map-get($grid, "columns")) * $numberOfColumns;
+  @return (100vw / map-get($grid, "columns")) * $numberOfColumns;
 }
 
 @function getGridColumnMaxWidth($numberOfColumns) {
-  @return math.div(map-get($grid, "max-width"), map-get($grid, "columns")) *
+  @return (map-get($grid, "max-width") / map-get($grid, "columns")) *
     $numberOfColumns;
 }
 

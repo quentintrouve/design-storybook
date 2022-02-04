@@ -9,6 +9,8 @@ interface HomeProps {
 
 export default function Home({ className }: HomeProps) {
   return (
-    <div className={cx(css.Home, className)}>Home</div>
+    <div className={cx(css.Home, className)}>
+      Home
+    </div>
   )
 }
