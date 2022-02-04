@@ -9,18 +9,45 @@
   background-color: map-get($primary-colors, "white");
   border: 1px solid map-get($neutral-colors, "black-10");
   border-radius: $border-radius;
+  margin-top: 88px;
 
   .content {
     @include gridColumnWidth(4);
 
     .title {
       text-align: center;
-      padding: 56px 0;
-      margin-bottom: 64px;
+      margin: 56px 0 64px;
     }
 
     .input {
       margin-top: 16px;
+    }
+
+    .checkbox {
+      margin-top: 8px;
+    }
+
+    .button {
+      margin: 40px auto 0;
+      
+    }
+
+    .inlineButton {
+      display: flex;
+      margin: 16px auto 0;
+      font-size: map-get($fontSizes, "regular");
+    }
+
+    .multipleButtons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px 0 56px;
+    }
+
+    .paragraph {
+      margin: 16px auto 32px;
+      text-align: center;
     }
   }
 }
