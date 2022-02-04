@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 
-import Spinner from "src/Components/Ui-kit/Icon/Spinner";
+import Spinner from "src/Components/Ui-kit/Icons/Spinner";
 
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
@@ -26,16 +26,16 @@ export default function SquaredCta({
 }: SquaredCtaProps) {
   return (
     <button
-      className={cx(css.SquaredCta, className, variant, { error })}
+      className={cx(css.SquaredCta, className, variant, { error, loading })}
       {...{ onClick, disabled }}
     >
       {loading && (
         <Spinner
-          color={variant === "primary" ? "white" : "black"}
+          color={variant === "primary" ? "white" : "blue"}
           className={css.spinner}
         />
       )}
-      {text}
+      <span className={css.text}>{text}</span>
     </button>
   );
 }

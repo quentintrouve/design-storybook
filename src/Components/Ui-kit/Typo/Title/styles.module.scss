@@ -1,0 +1,16 @@
+@import "/src/Styles/theme";
+
+.Title {
+  font-family: map-get($fontsFamilies, "helvetica-bold");
+  &.h1 {
+    font-size: map-get($fontSizes, "titleXL");
+  }
+
+  &.h2 {
+    font-size: map-get($fontSizes, "titleL");
+  }
+
+  &.h3 {
+    font-size: map-get($fontSizes, "title");
+  }
+}

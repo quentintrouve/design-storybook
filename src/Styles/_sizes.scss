@@ -1,0 +1,15 @@
+$grid: (
+  "columns": 24,
+  "max-width": 1940px,
+);
+
+$screens: (
+  "xxs": 350px,
+  "xs": 576px,
+  "sm": 640px,
+  "md": 800px,
+  "l": 930px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xxl": map-get($grid, "max-width"),
+);

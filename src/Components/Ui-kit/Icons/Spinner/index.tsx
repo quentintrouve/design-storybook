@@ -5,7 +5,7 @@ const cx = classNames.bind(css);
 interface svgProps {
   className?: string;
   size?: string;
-  color: "white" | "black";
+  color: "white" | "blue";
 }
 
 export default function svg({ className, size, color }: svgProps) {

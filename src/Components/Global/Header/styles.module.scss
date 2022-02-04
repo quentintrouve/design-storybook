@@ -2,8 +2,14 @@
 
 .Header {
   width: 100%;
-  background-color: map-get($primary-colors, "orange");
-  padding: 20px;
+  background-color: map-get($primary-colors, "white");
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 24px 16px;
+}
+
+.navItem {
+  &:not(last-child) {
+    margin-right: 16px;
+  }
 }

@@ -7,6 +7,7 @@
   transition: background-color 0.1s ease-in-out;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &:disabled {
     cursor: default;
@@ -55,6 +56,12 @@
   }
 
   .spinner {
-    margin-right: 8px;
+    position: absolute;
+  }
+
+  &.loading {
+    .text {
+      opacity: 0;
+    }
   }
 }
