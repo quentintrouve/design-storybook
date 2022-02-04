@@ -3,25 +3,21 @@ $primary-colors: (
   "orange": #ec8b32,
   "paper": #f7f3ea,
   "white": #ffffff,
+  "dark-green": #559071,
+  "black": #0000,
+  "erro": #c53a32,
 );
 
-$semantic-colors: (
-  "approuval-green": #9beaa1,
-  "dark-green": #559071,
-  "light-green": #edffed,
-  "cta-blue": #58a1a3,
-  "cta-dark-blue": #437c7d,
-  "cta-light-blue": #cdf3f4,
-  "ui-orange": #f0a23a,
-  "ui-dark-orange": #f0a23a,
-  "ui-light-orange": #e9e1bc,
-  "error-red": #c53a32,
-  "error-dark-red": #c53a32,
-  "error-light-red": #fef3f4,
+$cta-colors: (
+  "primary-cta": map-get($primary-colors, "blue"),
+  "primary-cta-hover": #305577,
+  "primary-cta-active": #0a2336,
+  "secondary-cta": map-get($primary-colors, "white"),
+  "secondary-cta-hover": map-get($primary-colors, "paper"),
+  "secondary-cta-active": #e9e1bc,
 );
 
 $neutral-colors: (
-  "black-100": #1f1f1f,
   "black-60": #545454,
   "black-40": #808080,
   "black-20": #aeaeae,
