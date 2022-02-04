@@ -13,6 +13,7 @@ export interface InputProps {
   error?: boolean;
   id?: string;
   label?: string;
+  onChange?: () => any;
 }
 
 export default function Input({
@@ -25,13 +26,14 @@ export default function Input({
   error,
   id,
   label, 
+  onChange
 }: InputProps) {
   return (
     <div className={cx(css.InputWrapper, className)}>
       {label && <label htmlFor={id} className={cx(css.Label)}>{label}</label> }
       <input
         className={cx(css.Input, { error, disabled })}
-        {...{ type, name, placeholder, required, disabled, id }}
+        {...{ type, name, placeholder, required, disabled, id, onChange }}
       />
     </div>
 

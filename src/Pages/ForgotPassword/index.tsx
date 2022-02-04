@@ -17,10 +17,6 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
-  const handleClick = () => {
-    console.log('Inscrit !')
-  }
-
   return (
     <div className={cx(css.Signin, className)}>
       <Form
@@ -40,6 +36,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
               label: "Email",
               name: "mail",
               id: "forgotpassword-mail",
+              onChange: () => setButtonIsDisabled(false)
             },
           },
           {
@@ -52,7 +49,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
 						secondCtaProps: {
               variant: "primary",
               text: "Envoyer",
-              onClick: () => handleClick(),
+              onClick: () => navigate("/"),
               disabled: buttonIsDisabled,
             }
           }
