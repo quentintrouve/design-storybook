@@ -13,8 +13,11 @@ const Template: ComponentStory<typeof InputText> = (args: InputTextProps) => (
 const Primary = Template.bind({});
 
 Primary.args = {
-  text: "Label",
+  label: "Label",
+  name: "Input Name",
+  placeholder: "Placeholder",
   disabled: false,
+  required: false,
   error: false,
 };
 

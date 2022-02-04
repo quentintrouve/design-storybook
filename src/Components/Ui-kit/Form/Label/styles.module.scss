@@ -1,7 +1,7 @@
 @import "/src/Styles/theme";
 
-.label {
+.Label {
     font-family: map-get($fontsFamilies, "helvetica");
     font-size: map-get($fontSizes, "regular");
-    color: map-get($neutral-colors, "black-20");
+    color: map-get($neutral-colors, "black-40");
 }

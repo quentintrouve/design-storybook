@@ -13,15 +13,23 @@ export interface InputProps {
   error?: boolean;
 }
 
-export default function Input({ className, type, name, placeholder, disabled, required }: InputProps) {
+export default function Input({ 
+  className, 
+  type, 
+  name, 
+  placeholder, 
+  disabled, 
+  required, 
+  error}: InputProps) {
+
   return (
     <input 
-        className={cx(css.input, className)}
+        className={cx(css.Input, className, { error, disabled })}
         type={type} 
         name={name}
         placeholder={placeholder}
-        {...disabled ? "disabled" : null } 
-        {...required ? "required" : null}
+        disabled={disabled}
+        required= {required}
     />
   );
 }
