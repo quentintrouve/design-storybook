@@ -9,7 +9,7 @@
         align-items: center;
     }
 
-    .subtitle {
+    h2:last-child {
         margin-left: 16px;
         color: map-get($primary-colors, "dark-green");
     }

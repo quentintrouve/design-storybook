@@ -14,7 +14,7 @@ export default function Home({ className, user}: HomeProps) {
     <div className={cx(css.Home, className)}>
       <div className={css.content}>
         <Title content="Bonjour" heading="h2"/>
-        <Title content={user} heading="h2" className={css.subtitle}/>
+        <Title content={user} heading="h2"/>
       </div>
     </div>
   )
