@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
@@ -18,22 +18,36 @@ export default function SignIn({ className, user, setUser }: SignUpProps) {
   const navigate = useNavigate();
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
-  const [userName, setUserName] = useState<string>(user);
+  const [userEmail, setUserEmail] = useState<string>('');
+  const [userPassword, setUserPassword] = useState<string>('');
+
 
   const handleChange = (e:any) :any => {
-    if(e.target.value) {
-      setUserName(e.target.value)
-      setButtonIsDisabled(false)
-    } else {
-      setUserName('')
-      setButtonIsDisabled(true)
+
+    switch(e.target.name) {
+      case 'mail':
+        setUserEmail(e.target.value)
+        break;
+      case 'password':
+        setUserPassword(e.target.value)
+        break;
+      default:
+        return null
     }
   }
 
   const handleClick = () :any => {
-    setUser(userName)
+    setUser(userEmail)
     navigate('/')
   }
+
+  useEffect(() => {
+    if((userEmail && userEmail.length > 0) && (userPassword && userPassword.length > 0)) {
+      setButtonIsDisabled(false)
+    } else {
+      setButtonIsDisabled(true)
+    }
+  }, [userEmail, userPassword])
 
   return (
     <div className={cx(css.Signup, className)}>
@@ -62,6 +76,7 @@ export default function SignIn({ className, user, setUser }: SignUpProps) {
               label: "Mot de passe",
               name: "password",
               id: "signup-password",
+              onChange: (e:any) => handleChange(e)
             },
           },
           {

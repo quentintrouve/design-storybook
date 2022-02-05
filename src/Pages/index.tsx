@@ -19,8 +19,8 @@ export default function Page() {
       <Header user={userLogged} setUser={setUserLogged}/>
       <Routes>
         <Route path="/" element={<Home user={userLogged} />} />
-        <Route path="sign-up" element={<SignUp user={userLogged} setUser={setUserLogged} />} />
-        <Route path="sign-in" element={<SignIn user={userLogged} setUser={setUserLogged} />} />
+        <Route path="sign-up" element={<SignUp setUser={setUserLogged} />} />
+        <Route path="sign-in" element={<SignIn setUser={setUserLogged} />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
       </Routes>
     </div>

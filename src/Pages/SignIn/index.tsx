@@ -9,11 +9,10 @@ const cx = classNames.bind(css);
 
 interface SignInProps {
   className?: string;
-  user?: string;
   setUser?: (param:string) => any;
 }
 
-export default function SignIn({ className, user, setUser }: SignInProps) {
+export default function SignIn({ className, setUser }: SignInProps) {
 
   const navigate = useNavigate();
 
