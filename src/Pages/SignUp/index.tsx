@@ -40,7 +40,7 @@ export default function SignIn({ className, setUser }: SignUpProps) {
     navigate('/')
   }
 
-  useEffect(() => {
+  useEffect(() :any => {
     if((userEmail && userEmail.length > 0) && (userPassword && userPassword.length > 0)) {
       setButtonIsDisabled(false)
     } else {
