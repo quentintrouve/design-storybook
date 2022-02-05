@@ -1,1 +1,16 @@
 @import "/src/Styles/theme";
+
+
+.Home {
+
+    .content {
+        margin-top: 88px;
+        display: flex;
+        align-items: center;
+    }
+
+    .subtitle {
+        margin-left: 16px;
+        color: map-get($primary-colors, "dark-green");
+    }
+}
