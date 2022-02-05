@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
@@ -18,24 +18,43 @@ export default function SignIn({ className, user, setUser }: SignInProps) {
   const navigate = useNavigate();
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
-  const [userName, setUserName] = useState<string>(user);
 
-  const handleChangeEntity = (e:any) :any => {
-    if(e.target.value) {
+  const [userName, setUserName] = useState<string>('');
+  const [userEmail, setUserEmail] = useState<string>('');
+  const [userPassword, setUserPassword] = useState<string>('');
+  
+
+  const handleChange = (e:any) :any => {
+
+    switch(e.target.name) {
+      case 'entity':
+        setUserName(e.target.value)
+        break;
+      case 'mail':
+        setUserEmail(e.target.value)
+        break;
+      case 'password':
+        setUserPassword(e.target.value)
+        break;
+      default:
+        return null
+    }
+  }
+
+  const handleClick = () :any => {
+    setUser(userEmail)
+    navigate('/')
+  }
+
+  useEffect(() => {
+    if((userName && userName.length > 0) && (userEmail && userEmail.length > 0) && (userPassword && userPassword.length > 0)) {
       setButtonIsDisabled(false)
     } else {
       setButtonIsDisabled(true)
     }
-  }
+  }, [userName, userEmail, userPassword])
 
-  const handleChangeEmail = (e:any) :any => {
-    setUserName(e.target.value)
-  }
 
-  const handleClick = () :any => {
-    setUser(userName)
-    navigate('/')
-  }
 
   return (
     <div className={cx(css.Signin, className)}>
@@ -53,7 +72,7 @@ export default function SignIn({ className, user, setUser }: SignInProps) {
               label: "Nom Prénom",
               name: "entity",
               id: "signin-entity",
-              onChange: (e:any) => handleChangeEntity(e)
+              onChange: (e:any) => handleChange(e)
             },
           },
           {
@@ -64,7 +83,7 @@ export default function SignIn({ className, user, setUser }: SignInProps) {
               label: "Email",
               name: "mail",
               id: "signin-mail",
-              onChange: (e:any) => handleChangeEmail(e)
+              onChange: (e:any) => handleChange(e)
             },
           },
           {
@@ -75,6 +94,7 @@ export default function SignIn({ className, user, setUser }: SignInProps) {
               label: "Mot de passe",
               name: "password",
               id: "signin-password",
+              onChange: (e:any) => handleChange(e)
             },
           },
           {
