@@ -48,25 +48,25 @@ export default function Form({
 		inlineCtaProps,
     checkboxProps,
 		paragraphProps
-  }: BlocProps) => {
+  }: BlocProps, index: any) => {
     switch (name) {
       case "input":
-        return <Input className={css.input} {...inputProps} />;
+        return <Input key={index} className={css.input} {...inputProps} />;
       case "cta":
-        return <SquaredCta className={css.button} {...ctaProps} />;
+        return <SquaredCta key={index} className={css.button} {...ctaProps} />;
       case "inline-cta":
-        return <InlineCta className={css.inlineButton} {...inlineCtaProps} />;
+        return <InlineCta key={index} className={css.inlineButton} {...inlineCtaProps} />;
       case "multiple-cta":
         return (
-					<div className={css.multipleButtons}>
+					<div key={index} className={css.multipleButtons}>
 						<SquaredCta {...firstCtaProps} />
 						<SquaredCta {...secondCtaProps} />
 					</div>
 				);
       case "checkbox":
-        return <CheckBox className={css.checkbox} {...checkboxProps} />;
+        return <CheckBox key={index} className={css.checkbox} {...checkboxProps} />;
       case "paragraph":
-        return <Paragraph className={css.paragraph} {...paragraphProps} />;
+        return <Paragraph key={index} className={css.paragraph} {...paragraphProps} />;
       default:
         return null;
     }
@@ -78,7 +78,7 @@ export default function Form({
 
         <Title content={title} heading="h1" className={css.title} />
 
-        {blocs && blocs?.map((bloc) => blocSerializer(bloc))}
+        {blocs && blocs?.map((index, bloc) => blocSerializer(index, bloc))}
 
 				{footerLabel && <FormFooter label={footerLabel} textButton={footerLink} to={footerRoute}/>}
       </div>
