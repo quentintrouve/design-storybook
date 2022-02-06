@@ -1,13 +1,14 @@
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
 import Spinner from "src/Components/Ui-kit/Icons/Spinner";
 
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
 
-export interface InlineCtaProps {
+export interface CtaProps {
   className?: string;
+  variant: "primary" | "secondary" | "inline";
   text: string;
   onClick?: () => any;
   disabled?: boolean;
@@ -17,8 +18,9 @@ export interface InlineCtaProps {
   to?: string;
 }
 
-export default function InlineCta({
+export default function Cta({
   className,
+  variant,
   text,
   onClick,
   disabled,
@@ -26,16 +28,27 @@ export default function InlineCta({
   error,
   routerLink,
   to,
-}: InlineCtaProps) {
+}: CtaProps) {
   const CustomTag = routerLink ? Link : "button";
 
   return (
     <CustomTag
-      className={cx(css.InlineCta, className, { error })}
+      className={cx(css.Cta, className, variant, { error, loading })}
       {...{ onClick, disabled, to }}
     >
-      {loading && <Spinner color="blue" className={css.spinner} />}
-      <span>{text}</span>
+      {loading && (
+        <Spinner
+          color={
+            variant === "secondary" || variant === "inline" ? "blue" : "white"
+          }
+          className={css.spinner}
+        />
+      )}
+      <span className={css.text}>{text}</span>
     </CustomTag>
   );
 }
+
+Cta.defaultProps = {
+  type: "primary",
+};

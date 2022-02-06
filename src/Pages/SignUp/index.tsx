@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
@@ -9,44 +9,46 @@ const cx = classNames.bind(css);
 
 interface SignUpProps {
   className?: string;
-  setUser?: (param:string) => any;
+  setUser?: (param: string) => any;
 }
 
 export default function SignIn({ className, setUser }: SignUpProps) {
-
   const navigate = useNavigate();
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
-  const [userEmail, setUserEmail] = useState<string>('');
-  const [userPassword, setUserPassword] = useState<string>('');
+  const [userEmail, setUserEmail] = useState<string>("");
+  const [userPassword, setUserPassword] = useState<string>("");
 
-
-  const handleChange = (e:any) :any => {
-
-    switch(e.target.name) {
-      case 'mail':
-        setUserEmail(e.target.value)
+  const handleChange = (e: any): any => {
+    switch (e.target.name) {
+      case "email":
+        setUserEmail(e.target.value);
         break;
-      case 'password':
-        setUserPassword(e.target.value)
+      case "password":
+        setUserPassword(e.target.value);
         break;
       default:
-        return null
+        return null;
     }
-  }
+  };
 
-  const handleClick = () :any => {
-    setUser(userEmail)
-    navigate('/')
-  }
+  const handleClick = (): any => {
+    setUser(userEmail);
+    navigate("/");
+  };
 
-  useEffect(() :any => {
-    if((userEmail && userEmail.length > 0) && (userPassword && userPassword.length > 0)) {
-      setButtonIsDisabled(false)
+  useEffect((): any => {
+    if (
+      userEmail &&
+      userEmail.length > 0 &&
+      userPassword &&
+      userPassword.length > 0
+    ) {
+      setButtonIsDisabled(false);
     } else {
-      setButtonIsDisabled(true)
+      setButtonIsDisabled(true);
     }
-  }, [userEmail, userPassword])
+  }, [userEmail, userPassword]);
 
   return (
     <div className={cx(css.Signup, className)}>
@@ -59,12 +61,12 @@ export default function SignIn({ className, setUser }: SignUpProps) {
           {
             name: "input",
             inputProps: {
-              type: "mail",
+              type: "email",
               placeholder: "marcdupont@gmail.com",
               label: "Email",
-              name: "mail",
+              name: "email",
               id: "signup-mail",
-              onChange: (e:any) => handleChange(e)
+              onChange: (e: any) => handleChange(e),
             },
           },
           {
@@ -75,7 +77,7 @@ export default function SignIn({ className, setUser }: SignUpProps) {
               label: "Mot de passe",
               name: "password",
               id: "signup-password",
-              onChange: (e:any) => handleChange(e)
+              onChange: (e: any) => handleChange(e),
             },
           },
           {
@@ -88,21 +90,26 @@ export default function SignIn({ className, setUser }: SignUpProps) {
           },
           {
             name: "cta",
-            ctaProps: {
-              variant: "primary",
-              text: "Se connecter",
-              onClick: () => handleClick(),
-              disabled: buttonIsDisabled,
-            }
+            ctaProps: [
+              {
+                variant: "primary",
+                text: "Se connecter",
+                onClick: () => handleClick(),
+                disabled: buttonIsDisabled,
+              },
+            ],
           },
           {
-            name: "inline-cta",
-            inlineCtaProps: {
-              text: "Mot de passe oublié ?", 
-              routerLink: true,
-              to: "/forgot-password"
-            }
-          }
+            name: "cta",
+            ctaProps: [
+              {
+                variant: "inline",
+                text: "Mot de passe oublié ?",
+                routerLink: true,
+                to: "/forgot-password",
+              },
+            ],
+          },
         ]}
       />
     </div>

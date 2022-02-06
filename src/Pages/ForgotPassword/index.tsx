@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
 
 import Form from "src/Components/Global/Form";
@@ -12,8 +12,7 @@ interface ForgotPasswordProps {
 }
 
 export default function ForgotPassword({ className }: ForgotPasswordProps) {
-
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
 
@@ -25,34 +24,37 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
           {
             name: "paragraph",
             paragraphProps: {
-              content: "Veuillez entrer votre adresse email pour rechercher votre compte."
+              content:
+                "Veuillez entrer votre adresse email pour rechercher votre compte.",
             },
           },
           {
             name: "input",
             inputProps: {
-              type: "mail",
+              type: "email",
               placeholder: "marcdupont@gmail.com",
               label: "Email",
-              name: "mail",
+              name: "email",
               id: "forgotpassword-mail",
-              onChange: () => setButtonIsDisabled(false)
+              onChange: () => setButtonIsDisabled(false),
             },
           },
           {
-            name: "multiple-cta",
-            firstCtaProps: {
-              variant: "secondary",
-              text: "Retour",
-              onClick: () => navigate(-1)
-            },
-						secondCtaProps: {
-              variant: "primary",
-              text: "Envoyer",
-              onClick: () => navigate("/"),
-              disabled: buttonIsDisabled,
-            }
-          }
+            name: "cta",
+            ctaProps: [
+              {
+                variant: "secondary",
+                text: "Retour",
+                onClick: () => navigate(-1),
+              },
+              {
+                variant: "primary",
+                text: "Envoyer",
+                onClick: () => navigate("/"),
+                disabled: buttonIsDisabled,
+              },
+            ],
+          },
         ]}
       />
     </div>

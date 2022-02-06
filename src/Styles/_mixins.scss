@@ -1,8 +1,4 @@
 @mixin button {
-  border: none;
-  background: none;
-  font-family: map-get($fontsFamilies, "helvetica-bold");
-  cursor: pointer;
 }
 
 @mixin from($screenName) {

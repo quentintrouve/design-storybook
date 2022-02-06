@@ -1,10 +1,10 @@
 @import "/src/Styles/theme";
 
-.SquaredCta {
-  @include button;
-  border-radius: $border-radius;
-  padding: 8px 16px;
-  transition: background-color 0.1s ease-in-out;
+.Cta {
+  border: none;
+  background: none;
+  font-family: map-get($fontsFamilies, "helvetica-bold");
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,23 @@
     cursor: default;
     pointer-events: none;
     opacity: 0.5;
+  }
+
+  &.primary,
+  &.secondary {
+    border-radius: $border-radius;
+    padding: 8px 16px;
+    transition: background-color 0.1s ease-in-out;
+
+    &.loading {
+      .text {
+        opacity: 0;
+      }
+    }
+
+    .spinner {
+      position: absolute;
+    }
   }
 
   &.primary {
@@ -55,13 +72,24 @@
     }
   }
 
-  .spinner {
-    position: absolute;
+  &.inline {
+    color: map-get($cta-colors, "primary-cta");
+    display: inline-flex;
+
+    &.error {
+      color: map-get($primary-colors, "red");
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .spinner {
+      margin-right: 8px;
+    }
   }
 
-  &.loading {
-    .text {
-      opacity: 0;
-    }
+  .text {
+    text-transform: capitalize;
   }
 }

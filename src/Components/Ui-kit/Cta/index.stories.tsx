@@ -1,20 +1,21 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import SquaredCta, { SquaredCtaProps } from "./index";
+import Cta, { CtaProps } from "./index";
 
 export default {
-  title: "Cta/Squared Cta",
-  component: SquaredCta,
+  title: "Cta",
+  component: Cta,
   parameters: {
     layout: "centered",
   },
-} as ComponentMeta<typeof SquaredCta>;
+} as ComponentMeta<typeof Cta>;
 
-const Template: ComponentStory<typeof SquaredCta> = (args: SquaredCtaProps) => (
-  <SquaredCta {...args} />
+const Template: ComponentStory<typeof Cta> = (args: CtaProps) => (
+  <Cta {...args} />
 );
 
 const Primary = Template.bind({});
 const Secondary = Template.bind({});
+const Inline = Template.bind({});
 
 Primary.args = {
   variant: "primary",
@@ -31,5 +32,12 @@ Secondary.args = {
   loading: false,
   error: false,
 };
+Inline.args = {
+  variant: "inline",
+  text: "submit",
+  disabled: false,
+  loading: false,
+  error: false,
+};
 
-export { Primary, Secondary };
+export { Primary, Secondary, Inline };
