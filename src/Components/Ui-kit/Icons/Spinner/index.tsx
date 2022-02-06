@@ -11,7 +11,7 @@ interface svgProps {
 export default function svg({ className, size, color }: svgProps) {
   const computedSize = size ?? "24";
   const viewBox = `0 0 ${computedSize} ${computedSize}`;
-  console.log(color);
+ 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

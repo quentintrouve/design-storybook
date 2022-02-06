@@ -20,19 +20,3 @@
   width: getGridColumnWidth($numberOfColumns);
   max-width: getGridColumnMaxWidth($numberOfColumns);
 }
-
-@mixin inputWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-@mixin input {
-  max-width: 100%;
-  padding: 24px 16px;
-  border: 1px solid map-get($neutral-colors, "black-40");
-  border-radius: $border-radius;
-  background-color: map-get($primary-colors, "white");
-  font-family: map-get($fontsFamilies, "helvetica");
-  font-size: map-get($fontSizes, "regular");
-}

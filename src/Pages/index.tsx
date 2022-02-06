@@ -1,22 +1,20 @@
 import { Routes, Route } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 
 import Header from "src/Components/Global/Header";
 import Home from "./Home";
-import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-import ForgotPassword from "./ForgotPassword"
+import SignUp from "./SignUp";
+import ForgotPassword from "./ForgotPassword";
 
 import css from "./styles.module.scss";
 
 export default function Page() {
-  
-  const [userLogged, setUserLogged] = useState<string>('');
-
+  const [userLogged, setUserLogged] = useState<string>("");
 
   return (
     <div className={css.Page}>
-      <Header user={userLogged} setUser={setUserLogged}/>
+      <Header user={userLogged} setUser={setUserLogged} />
       <Routes>
         <Route path="/" element={<Home user={userLogged} />} />
         <Route path="sign-up" element={<SignUp setUser={setUserLogged} />} />

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
 
-import Form from "src/Components/Global/Form";
+import Form from "src/Components/Slices/Form";
+
+import { RenderedValue } from "src/Components/Ui-kit/Form/Input";
 
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
@@ -13,8 +15,12 @@ interface ForgotPasswordProps {
 
 export default function ForgotPassword({ className }: ForgotPasswordProps) {
   const navigate = useNavigate();
-
+  const [passwordValue, setPasswordValue] = useState<RenderedValue>();
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
+
+  useEffect(() => {
+    passwordValue?.isValid && setButtonIsDisabled(false);
+  }, [passwordValue]);
 
   return (
     <div className={cx(css.Signin, className)}>
@@ -36,7 +42,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
               label: "Email",
               name: "email",
               id: "forgotpassword-mail",
-              onChange: () => setButtonIsDisabled(false),
+              getValue: (value) => setPasswordValue(value),
             },
           },
           {

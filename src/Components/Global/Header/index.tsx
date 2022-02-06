@@ -22,7 +22,7 @@ export default function Header({ className, user, setUser }: headerProps) {
 
   return (
     <div className={cx(css.Header, className)}>
-      <nav>
+      <nav className={css.navigation}>
         <Cta
           className={css.navItem}
           variant="inline"
@@ -43,14 +43,14 @@ export default function Header({ className, user, setUser }: headerProps) {
               className={css.navItem}
               variant="inline"
               text="Se connecter"
-              to="/sign-up"
+              to="/sign-in"
               routerLink
             />
             <Cta
               className={css.navItem}
               variant="inline"
               text="S'inscrire"
-              to="/sign-in"
+              to="/sign-up"
               routerLink
             />
           </>

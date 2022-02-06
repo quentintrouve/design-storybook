@@ -21,7 +21,7 @@ export default function FormFooter({
 }: FormFooterProps) {
   return (
     <div className={cx(css.FormFooter, className)}>
-      <Label text={label} />
+      <Label className={css.label} text={label} />
       <Cta
         className={css.inlineButton}
         variant="primary"

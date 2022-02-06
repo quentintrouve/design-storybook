@@ -8,6 +8,9 @@
   padding: 24px 16px;
 }
 
+.navigation {
+  display: flex;
+}
 .navItem {
   &:not(:last-child) {
     padding-right: 16px;

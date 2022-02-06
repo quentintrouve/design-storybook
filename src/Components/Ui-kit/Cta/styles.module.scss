@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 
   &:disabled {
     cursor: default;
@@ -74,7 +75,6 @@
 
   &.inline {
     color: map-get($cta-colors, "primary-cta");
-    display: inline-flex;
 
     &.error {
       color: map-get($primary-colors, "red");
@@ -87,9 +87,5 @@
     .spinner {
       margin-right: 8px;
     }
-  }
-
-  .text {
-    text-transform: capitalize;
   }
 }

@@ -2,78 +2,46 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import classNames from "classnames/bind";
 
-import Form from "src/Components/Global/Form";
+import Form from "src/Components/Slices/Form";
+
+import { RenderedValue } from "src/Components/Ui-kit/Form/Input";
 
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
 
-interface SignInProps {
+interface SignUpProps {
   className?: string;
   setUser?: (param: string) => any;
 }
 
-export default function SignIn({ className, setUser }: SignInProps) {
+export default function SignIn({ className, setUser }: SignUpProps) {
   const navigate = useNavigate();
 
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
+  const [userEmail, setUserEmail] = useState<RenderedValue>();
+  const [userPassword, setUserPassword] = useState<RenderedValue>();
 
-  const [userName, setUserName] = useState<string>("");
-  const [userEmail, setUserEmail] = useState<string>("");
-  const [userPassword, setUserPassword] = useState<string>("");
-
-  const handleChange = (e: any): any => {
-    switch (e.target.name) {
-      case "entity":
-        setUserName(e.target.value);
-        break;
-      case "email":
-        setUserEmail(e.target.value);
-        break;
-      case "password":
-        setUserPassword(e.target.value);
-        break;
-    }
-  };
-
-  const handleClick = (): void => {
-    setUser(userEmail);
+  const handleClick = (): any => {
+    setUser(userEmail?.value);
     navigate("/");
   };
 
   useEffect((): any => {
-    if (
-      userName &&
-      userName.length > 0 &&
-      userEmail &&
-      userEmail.length > 0 &&
-      userPassword &&
-      userPassword.length > 0
-    ) {
+    if (userEmail?.isValid && userPassword?.isValid) {
       setButtonIsDisabled(false);
     } else {
       setButtonIsDisabled(true);
     }
-  }, [userName, userEmail, userPassword]);
+  }, [userEmail, userPassword]);
 
   return (
-    <div className={cx(css.Signin, className)}>
+    <div className={cx(css.Signup, className)}>
       <Form
-        title="S'inscrire"
-        footerLabel="Vous avez déjà un compte ?"
-        footerLink="Se connecter"
-        footerRoute="/sign-up"
+        title="Se connecter"
+        footerLabel="Vous n'avez pas de compte ?"
+        footerLink="S'inscrire"
+        footerRoute="/sign-in"
         blocs={[
-          {
-            name: "input",
-            inputProps: {
-              type: "text",
-              placeholder: "Dupont Marc",
-              label: "Nom Prénom",
-              name: "entity",
-              id: "signin-entity",
-              onChange: (e: any) => handleChange(e),
-            },
-          },
           {
             name: "input",
             inputProps: {
@@ -81,8 +49,9 @@ export default function SignIn({ className, setUser }: SignInProps) {
               placeholder: "marcdupont@gmail.com",
               label: "Email",
               name: "email",
-              id: "signin-mail",
-              onChange: (e: any) => handleChange(e),
+              id: "signup-mail",
+              required: true,
+              getValue: (value) => setUserEmail(value),
             },
           },
           {
@@ -92,8 +61,9 @@ export default function SignIn({ className, setUser }: SignInProps) {
               placeholder: "•••••••••••••",
               label: "Mot de passe",
               name: "password",
-              id: "signin-password",
-              onChange: (e: any) => handleChange(e),
+              id: "signup-password",
+              required: true,
+              getValue: (value) => setUserPassword(value),
             },
           },
           {
@@ -101,7 +71,7 @@ export default function SignIn({ className, setUser }: SignInProps) {
             checkboxProps: {
               label: "Se souvenir du mot de passe",
               name: "checkbox",
-              id: "signin-checkbox",
+              id: "signup-checkbox",
             },
           },
           {
@@ -109,9 +79,20 @@ export default function SignIn({ className, setUser }: SignInProps) {
             ctaProps: [
               {
                 variant: "primary",
-                text: "Inscription",
-                disabled: buttonIsDisabled,
+                text: "Se connecter",
                 onClick: () => handleClick(),
+                disabled: buttonIsDisabled,
+              },
+            ],
+          },
+          {
+            name: "cta",
+            ctaProps: [
+              {
+                variant: "inline",
+                text: "Mot de passe oublié ?",
+                routerLink: true,
+                to: "/forgot-password",
               },
             ],
           },
