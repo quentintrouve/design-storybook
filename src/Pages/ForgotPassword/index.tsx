@@ -19,6 +19,11 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
 
   useEffect(() => {
+    document.title = "Mote de passe oublié";
+  }, []);
+
+  useEffect(() => {
+    console.log(passwordValue);
     passwordValue?.isValid && setButtonIsDisabled(false);
   }, [passwordValue]);
 
@@ -43,6 +48,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
               name: "email",
               id: "forgotpassword-mail",
               getValue: (value) => setPasswordValue(value),
+              required: true,
             },
           },
           {

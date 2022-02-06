@@ -69,6 +69,7 @@ export default function Input({
             setError(false);
           }}
           onBlur={() => !isValid && setError(true)}
+          onFocus={() => setError(false)}
           {...{ type, name, placeholder, required, disabled, id }}
         />
         {type === "password" && (

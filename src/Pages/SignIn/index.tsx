@@ -26,6 +26,10 @@ export default function SignIn({ className, setUser }: SignUpProps) {
     navigate("/");
   };
 
+  useEffect(() => {
+    document.title = "Connexion";
+  }, []);
+
   useEffect((): any => {
     if (userEmail?.isValid && userPassword?.isValid) {
       setButtonIsDisabled(false);
