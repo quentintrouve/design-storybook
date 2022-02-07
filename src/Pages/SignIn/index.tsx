@@ -67,7 +67,10 @@ export default function SignIn({ className, setUser }: SignUpProps) {
               name: "password",
               id: "signup-password",
               required: true,
-              getValue: (value) => setUserPassword(value),
+              getValue: (value) => {
+                //console.log({ value });
+                setUserPassword(value);
+              },
             },
           },
           {
