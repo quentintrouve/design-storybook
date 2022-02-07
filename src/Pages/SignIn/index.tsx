@@ -44,7 +44,7 @@ export default function SignIn({ className, setUser }: SignUpProps) {
         title="Se connecter"
         footerLabel="Vous n'avez pas de compte ?"
         footerLink="S'inscrire"
-        footerRoute="/sign-in"
+        footerRoute="/sign-up"
         blocs={[
           {
             name: "input",
