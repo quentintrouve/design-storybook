@@ -1,10 +1,8 @@
 @import "/src/Styles/theme";
 
 .Cta {
-  border: none;
-  background: none;
+  @include button;
   font-family: map-get($fontsFamilies, "helvetica-bold");
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

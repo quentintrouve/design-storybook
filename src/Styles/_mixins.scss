@@ -1,4 +1,7 @@
 @mixin button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 @mixin from($screenName) {

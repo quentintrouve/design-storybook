@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames/bind";
 import Label from "../Label";
 
@@ -7,6 +7,11 @@ import EyeClosed from "src/Components/Ui-kit/Icons/EyeClosed";
 
 import css from "./styles.module.scss";
 const cx = classNames.bind(css);
+
+var regEmail = new RegExp(
+  "^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$",
+  "i"
+);
 
 export interface RenderedValue {
   value: string;
@@ -44,19 +49,17 @@ export default function Input({
   const [error, setError] = useState<boolean>(isError);
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    getValue({ value, isValid });
-    console.log(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value));
+  const checkIfValid = (text: string) => {
     if (required) {
       type !== "email"
-        ? value?.length > 0
+        ? text?.length > 0
           ? setIsValid(true)
           : setIsValid(false)
-        : /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
+        : regEmail.test(text)
         ? setIsValid(true)
         : setIsValid(false);
     }
-  }, [value]);
+  };
 
   return (
     <div className={cx(css.InputWrapper, className)}>
@@ -66,6 +69,8 @@ export default function Input({
           className={cx(css.Input, { error, disabled })}
           onChange={(e) => {
             setValue(e?.target?.value);
+            checkIfValid(e?.target?.value);
+            getValue({ value: e?.target?.value, isValid });
             setError(false);
           }}
           onBlur={() => !isValid && setError(true)}
