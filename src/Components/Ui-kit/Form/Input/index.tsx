@@ -43,11 +43,10 @@ export default function Input({
   id,
   label,
   getValue,
-  isError,
 }: InputProps) {
   const [value, setValue] = useState<string>("");
   const [isValid, setIsValid] = useState<boolean>(!required);
-  const [error, setError] = useState<boolean>(isError);
+  const [error, setError] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const checkIfValid = (text: string) => {
@@ -63,12 +62,12 @@ export default function Input({
   };
 
   const showError = () => {
-    if(type === 'email') {
-      return <ErrorForm content="Le champ email n'est pas valide." />
+    if (type !== "email" || value?.length === 0) {
+      return <ErrorForm content="Le champ est obligatoire." />;
     } else {
-      return <ErrorForm content="Le champ est obligatoire." />
+      return <ErrorForm content="Le champ email n'est pas valide." />;
     }
-  }
+  };
 
   return (
     <div className={cx(css.InputWrapper, className)}>
@@ -99,7 +98,7 @@ export default function Input({
             </button>
           </>
         )}
-        {required && error && showError() }
+        {required && error && showError()}
       </div>
     </div>
   );

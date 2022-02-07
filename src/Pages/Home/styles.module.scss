@@ -1,16 +1,14 @@
 @import "/src/Styles/theme";
 
-
 .Home {
+  .content {
+    margin-top: 88px;
+    display: flex;
+    align-items: center;
+  }
 
-    .content {
-        margin-top: 88px;
-        display: flex;
-        align-items: center;
-    }
-
-    h2:last-child {
-        margin-left: 16px;
-        color: map-get($primary-colors, "dark-green");
-    }
+  h2:last-child {
+    margin-left: 16px;
+    color: map-get($semantic-colors, "approval-green");
+  }
 }

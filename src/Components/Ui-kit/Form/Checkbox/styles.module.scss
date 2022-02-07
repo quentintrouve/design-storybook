@@ -37,12 +37,12 @@
     }
 
     &:hover {
-      border: 1px solid map-get($neutral-colors, "black-60");
+      border: 2px solid map-get($neutral-colors, "black-60");
     }
 
     &:focus {
       outline: none;
-      border: 2px solid map-get($primary-colors, "dark-green");
+      border: 2px solid map-get($semantic-colors, "approval-green");
     }
 
     &:disabled {
@@ -51,7 +51,7 @@
     }
 
     &.error {
-      border: 2px solid map-get($primary-colors, "red");
+      border: 2px solid map-get($semantic-colors, "error-red");
     }
 
     &:checked {
