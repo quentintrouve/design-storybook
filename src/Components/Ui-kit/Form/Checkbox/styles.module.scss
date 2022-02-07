@@ -4,7 +4,12 @@
   display: flex;
   align-items: center;
 
+  &.disabled {
+    pointer-events: none;
+  }
+
   .checkBox {
+    box-sizing: border-box;
     position: relative;
     -webkit-appearance: none;
     appearance: none;
@@ -23,12 +28,30 @@
       content: "";
       display: block;
       position: absolute;
-      width: 75%;
-      height: 75%;
+      width: 10px;
+      height: 10px;
       background-color: map-get($primary-colors, "blue");
       transition: transform 0.2s ease-in-out;
       border-radius: 4px;
       transform: scale(0);
+    }
+
+    &:hover {
+      border: 1px solid map-get($neutral-colors, "black-60");
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid map-get($primary-colors, "dark-green");
+    }
+
+    &:disabled {
+      border-color: map-get($neutral-colors, "black-10");
+      background-color: map-get($neutral-colors, "black-10");
+    }
+
+    &.error {
+      border: 2px solid map-get($primary-colors, "red");
     }
 
     &:checked {

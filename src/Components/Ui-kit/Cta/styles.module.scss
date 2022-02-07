@@ -39,8 +39,12 @@
       background-color: map-get($cta-colors, "primary-cta-hover");
     }
 
-    &:focus,
-    &active {
+    &:focus {
+      outline: none;
+      border: 2px solid map-get($primary-colors, "dark-green");
+    }
+
+    &:active {
       outline: none;
       background-color: map-get($cta-colors, "primary-cta-active");
     }
@@ -60,7 +64,7 @@
     }
 
     &:focus,
-    &active {
+    &:active {
       outline: none;
       background-color: map-get($cta-colors, "secondary-cta-active");
     }

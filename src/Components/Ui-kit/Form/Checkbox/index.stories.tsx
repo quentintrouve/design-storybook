@@ -20,6 +20,8 @@ Primary.args = {
   label: "Se souvenir du mot de passe",
   name: "checkbox",
   id: "checkbox",
+  error: false,
+  disabled: false,
 };
 
 export { Primary };
