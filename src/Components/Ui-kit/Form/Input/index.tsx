@@ -75,6 +75,7 @@ export default function Input({
       <div className={css.inputContainer}>
         <input
           className={cx(css.Input, { error, disabled })}
+          value={value}
           onChange={(e) => {
             setValue(e?.target?.value);
             checkIfValid(e?.target?.value);
@@ -88,7 +89,11 @@ export default function Input({
         {type === "password" && (
           <>
             {showPassword && (
-              <input className={cx(css.Input, css.fakeInput)} value={value} />
+              <input
+                className={cx(css.Input, css.fakeInput)}
+                value={value}
+                onChange={(e) => setValue(e?.target?.value)}
+              />
             )}
             <button
               className={cx(css.eye, css.open)}
