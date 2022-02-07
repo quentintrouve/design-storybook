@@ -15,7 +15,9 @@ export interface CtaProps {
   loading?: boolean;
   error?: boolean;
   routerLink?: boolean;
+  link?: boolean;
   to?: string;
+  type?: "submit" | "button";
 }
 
 export default function Cta({
@@ -26,15 +28,17 @@ export default function Cta({
   disabled,
   loading,
   error,
+  link,
   routerLink,
   to,
+  type,
 }: CtaProps) {
-  const CustomTag = routerLink ? Link : "button";
+  const CustomTag = routerLink ? Link : link ? "a" : "button";
 
   return (
     <CustomTag
       className={cx(css.Cta, className, variant, { error, loading })}
-      {...{ onClick, disabled, to }}
+      {...{ onClick, disabled, to, type }}
     >
       {loading && (
         <Spinner

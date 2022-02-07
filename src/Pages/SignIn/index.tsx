@@ -89,6 +89,8 @@ export default function SignIn({ className, setUser }: SignUpProps) {
                 text: "Se connecter",
                 onClick: () => handleClick(),
                 disabled: buttonIsDisabled,
+
+                type: "submit",
               },
             ],
           },

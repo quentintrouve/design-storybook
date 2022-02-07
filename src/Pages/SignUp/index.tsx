@@ -100,6 +100,7 @@ export default function SignUp({ className, setUser }: SignInProps) {
                 text: "Inscription",
                 disabled: buttonIsDisabled,
                 onClick: () => handleClick(),
+                type: "submit",
               },
             ],
           },

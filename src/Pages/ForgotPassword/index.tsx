@@ -64,6 +64,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
                 text: "Envoyer",
                 onClick: () => navigate("/"),
                 disabled: buttonIsDisabled,
+                type: "submit",
               },
             ],
           },

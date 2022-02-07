@@ -72,7 +72,7 @@ export default function Form({
   };
 
   return (
-    <div className={cx(css.Form, className)}>
+    <form className={cx(css.Form, className)}>
       <div className={css.content}>
         <Title content={title} heading="h1" className={css.title} />
         {blocs && blocs?.map((index, bloc) => blocSerializer(index, bloc))}
@@ -84,6 +84,6 @@ export default function Form({
           />
         )}
       </div>
-    </div>
+    </form>
   );
 }

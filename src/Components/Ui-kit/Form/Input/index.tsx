@@ -70,7 +70,7 @@ export default function Input({
   };
 
   return (
-    <div className={cx(css.InputWrapper, className)}>
+    <fieldset className={cx(css.InputWrapper, className)}>
       {label && <Label text={label} htmlFor={id} />}
       <div className={css.inputContainer}>
         <input
@@ -100,6 +100,6 @@ export default function Input({
         )}
         {required && error && showError()}
       </div>
-    </div>
+    </fieldset>
   );
 }
