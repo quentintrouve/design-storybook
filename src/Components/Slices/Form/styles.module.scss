@@ -1,7 +1,15 @@
 @import "/src/Styles/theme";
 
 .Form {
-  @include gridColumnWidth(6);
+  @include gridColumnWidth(12);
+
+  @include from(sm) {
+    @include gridColumnWidth(10);
+  }
+
+  @include from(lg) {
+    @include gridColumnWidth(6);
+  }
 
   display: flex;
   flex-direction: column;
@@ -12,7 +20,15 @@
   margin-top: 88px;
 
   .content {
-    @include gridColumnWidth(4);
+    @include gridColumnWidth(10);
+
+    @include from(sm) {
+      @include gridColumnWidth(8);
+    }
+
+    @include from(lg) {
+      @include gridColumnWidth(4);
+    }
 
     .title {
       text-align: center;
@@ -29,7 +45,6 @@
 
     .button {
       margin: 40px auto 0;
-      
     }
 
     .inlineButton {
