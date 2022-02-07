@@ -1,12 +1,4 @@
-import classNames from "classnames/bind";
-import css from "./styles.module.scss";
-const cx = classNames.bind(css);
-
-interface svgProps {
-  className?: string;
-}
-
-export default function svg({ className }: svgProps) {
+export default function svg() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
