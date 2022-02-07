@@ -19,7 +19,7 @@ export default function ForgotPassword({ className }: ForgotPasswordProps) {
   const [buttonIsDisabled, setButtonIsDisabled] = useState<boolean>(true);
 
   useEffect(() => {
-    document.title = "Mote de passe oublié";
+    document.title = "Mot de passe oublié";
   }, []);
 
   useEffect(() => {

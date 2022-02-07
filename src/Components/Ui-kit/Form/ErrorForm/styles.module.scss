@@ -1,0 +1,8 @@
+@import "/src/Styles/theme";
+
+.ErrorForm {
+    font-family: map-get($fontsFamilies, "helvetica");
+    font-size: map-get($fontSizes, "regular");
+    color: map-get($primary-colors, "red");
+    margin-top: 8px;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames/bind";
 import Label from "../Label";
+import ErrorForm from "../ErrorForm";
 
 import EyeOpen from "src/Components/Ui-kit/Icons/EyeOpen";
 import EyeClosed from "src/Components/Ui-kit/Icons/EyeClosed";
@@ -61,6 +62,14 @@ export default function Input({
     }
   };
 
+  const showError = () => {
+    if(type === 'email') {
+      return <ErrorForm content="Le champ email n'est pas valide." />
+    } else {
+      return <ErrorForm content="Le champ est obligatoire." />
+    }
+  }
+
   return (
     <div className={cx(css.InputWrapper, className)}>
       {label && <Label text={label} htmlFor={id} />}
@@ -90,6 +99,7 @@ export default function Input({
             </button>
           </>
         )}
+        {required && error && showError() }
       </div>
     </div>
   );
