@@ -65,8 +65,11 @@ Your storybook is ready to be deployed.
 
 Reactjs - [documentation](https://reactjs.org/)  
 Typescript - [documentation](https://www.typescriptlang.org/docs/)  
-Storybook - [documentation](https://storybook.js.org/docs/react/get-started/introduction)  
-Sass - [documentation](https://sass-lang.com/documentation/)  
+Storybook - [documentation](https://storybook.js.org/docs/react/get-started/introduction)   
+
+## 🎨 Styling with
+
+Sass - [documentation](https://sass-lang.com/documentation/)
 
 ## 👥 Contributers
 
