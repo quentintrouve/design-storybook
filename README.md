@@ -69,8 +69,8 @@ Storybook - [documentation](https://storybook.js.org/docs/react/get-started/intr
 
 ## 🎨 Styling with
 
-Sass - [documentation](https://sass-lang.com/documentation/)
-Classnames - [classnames](https://www.npmjs.com/package/classnames)
+Sass - [documentation](https://sass-lang.com/documentation/)\
+Classnames - [documentation](https://www.npmjs.com/package/classnames)\
 and css-modules
 
 ## 👥 Contributers
