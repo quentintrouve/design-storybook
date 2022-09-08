@@ -3,7 +3,7 @@
 ## 📖 Summary
 
 This site has been created for educational purposes as part of the Bachelor's curriculum of the HETIC school. It has been created to have a first approach of Storybook.\
-It's a small application containing two pages: registration and login. The goal was to make a complete design system beforehand with Figma and to implement it on a project with Sass and Storybook.
+It's a small application containing two pages: registration and login. The goal was to make a **complete design system** beforehand with **Figma** and to implement it on a project with **Sass** and **Storybook**.
 
 ## 🚀 Getting Started
 
