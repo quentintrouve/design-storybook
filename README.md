@@ -5,6 +5,8 @@
 This site has been created to have a first approach of Storybook.\
 It's a small application containing two pages: registration and login. The goal was to make a **complete design system** beforehand with **Figma** and to implement it on a project with **Sass** and **Storybook**.
 
+Time to dev: **3 days**
+
 ## 🚀 Getting Started
 
 ### Live demo
